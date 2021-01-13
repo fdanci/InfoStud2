@@ -40,12 +40,13 @@ namespace InfoStud2
             this.database1DataSet = new InfoStud2.Database1DataSet();
             this.studentTableAdapter = new InfoStud2.Database1DataSetTableAdapters.StudentTableAdapter();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnReport = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -78,6 +79,7 @@ namespace InfoStud2
             this.gridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridStudents.Size = new System.Drawing.Size(444, 367);
             this.gridStudents.TabIndex = 0;
+            this.gridStudents.Visible = false;
             this.gridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridStudents_CellClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -124,6 +126,7 @@ namespace InfoStud2
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.btnLogout);
             this.panelMain.Controls.Add(this.btnReport);
             this.panelMain.Controls.Add(this.btnNew);
             this.panelMain.Controls.Add(this.pictureBox1);
@@ -133,8 +136,19 @@ namespace InfoStud2
             this.panelMain.Controls.Add(this.gridStudents);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(997, 563);
+            this.panelMain.Size = new System.Drawing.Size(997, 560);
             this.panelMain.TabIndex = 1;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(300, 522);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Visible = false;
+            this.btnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // btnNew
             // 
@@ -144,25 +158,28 @@ namespace InfoStud2
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Visible = false;
             this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -19);
+            this.pictureBox1.Location = new System.Drawing.Point(14, -13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // panelRight
             // 
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(509, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(488, 563);
+            this.panelRight.Size = new System.Drawing.Size(488, 560);
             this.panelRight.TabIndex = 3;
+            this.panelRight.Visible = false;
             // 
             // lblSearch
             // 
@@ -173,6 +190,7 @@ namespace InfoStud2
             this.lblSearch.Size = new System.Drawing.Size(59, 17);
             this.lblSearch.TabIndex = 2;
             this.lblSearch.Text = "Search";
+            this.lblSearch.Visible = false;
             // 
             // txtSearch
             // 
@@ -180,17 +198,19 @@ namespace InfoStud2
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(292, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.Visible = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // btnReport
+            // btnLogout
             // 
-            this.btnReport.Location = new System.Drawing.Point(300, 522);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 23);
-            this.btnReport.TabIndex = 6;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.BtnReport_Click);
+            this.btnLogout.Location = new System.Drawing.Point(12, 522);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Visible = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmMain
             // 
@@ -227,6 +247,7 @@ namespace InfoStud2
         public System.Windows.Forms.DataGridView gridStudents;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

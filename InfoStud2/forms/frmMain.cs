@@ -41,6 +41,7 @@ namespace InfoStud2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadUCLogin();
             this.studentTableAdapter.Fill(this.database1DataSet.Student);
             gridStudents.ClearSelection();
         }
@@ -50,9 +51,6 @@ namespace InfoStud2
         /// </summary>
         public void ReloadStudents()
         {
-
-
-
             this.studentTableAdapter.Fill(this.database1DataSet.Student);
             gridStudents.ClearSelection();
         }
@@ -164,6 +162,24 @@ namespace InfoStud2
             ucLogin.Name = "UCLogin";
             ucLogin.Dock = DockStyle.Fill;
             PanelMain.Controls.Add(ucLogin);
+        }
+
+        public void SwapLoginState()
+        {
+            PanelRight.Visible = !PanelRight.Visible;
+            pictureBox1.Visible = !pictureBox1.Visible;
+            gridStudents.Visible = !gridStudents.Visible;
+            lblSearch.Visible = !lblSearch.Visible;
+            txtSearch.Visible = !txtSearch.Visible;
+            btnNew.Visible = !btnNew.Visible;
+            btnReport.Visible = !btnReport.Visible;
+            btnLogout.Visible = !btnLogout.Visible;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            SwapLoginState();
+            LoadUCLogin();
         }
     }
 }

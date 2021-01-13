@@ -22,7 +22,8 @@ namespace InfoStud2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            parent.PanelMain.Controls.RemoveByKey("UCLogin");
+            parent.SwapLoginState();
         }
 
         private void UCLogin_Load(object sender, EventArgs e)

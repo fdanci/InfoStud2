@@ -41,7 +41,7 @@ namespace InfoStud2
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(997, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(1013, 167);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -52,9 +52,9 @@ namespace InfoStud2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(428, 248);
+            this.btnLogin.Location = new System.Drawing.Point(420, 244);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(156, 55);
+            this.btnLogin.Size = new System.Drawing.Size(172, 52);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@ namespace InfoStud2
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UCLogin";
-            this.Size = new System.Drawing.Size(997, 563);
+            this.Size = new System.Drawing.Size(1013, 560);
             this.Load += new System.EventHandler(this.UCLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
