@@ -31,7 +31,7 @@ namespace InfoStud2
         }
 
         /// <summary>
-        /// Read subjects from database, by given id of the selected student.
+        /// Read subjects from database by given id of the selected student, fill subjects grid.
         /// </summary>
         private void LoadSubjects()
         {
@@ -48,6 +48,10 @@ namespace InfoStud2
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
                             gridDetails.DataSource = dt;
+
+                            // Prevent user from editing first two columns.
+                            gridDetails.Columns[0].ReadOnly = true;
+                            gridDetails.Columns[1].ReadOnly = true;
                         }
                     }
                 }
@@ -63,6 +67,7 @@ namespace InfoStud2
             lblName.Text = studentName;
             lblEmail.Text = studentEmail;
             lblYear.Text = $"Year: {studentYear}";
+
             LoadSubjects();
         }
 
@@ -115,24 +120,71 @@ namespace InfoStud2
         private void btnSave_Click(object sender, EventArgs e)
         {
             SwapEditSaveMode();
+            gridDetails.Columns[2].DefaultCellStyle.BackColor = Color.White;
+            SaveChanges();
+        }
+
+        /// <summary>
+        /// Read grades from each row and save them to database.
+        /// </summary>
+        private void SaveChanges()
+        {
+            var valuesToSave = new Dictionary<int, String>();
+
+            if (gridDetails.Rows.Count != 0)
+            {
+                foreach (DataGridViewRow row in gridDetails.Rows)
+                {
+                    int id = (int)row.Cells[0].Value;
+                    string grade = "";
+
+                    // Prevent null values from crashing the app.
+                    if (row.Cells[2].Value != DBNull.Value)
+                    {
+                        grade = (string)row.Cells[2].Value;
+                    }
+                    valuesToSave.Add(id, grade);
+                }
+            }
+            valuesToSave.ToString();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             SwapEditSaveMode();
+            gridDetails.Columns[2].DefaultCellStyle.BackColor = Color.Yellow;
         }
 
+        /// <summary>
+        /// Change state between edit mode and save mode.
+        /// </summary>
         private void SwapEditSaveMode()
         {
             btnEdit.Visible = !btnEdit.Visible;
             btnSave.Visible = !btnSave.Visible;
             btnDelete.Enabled = !btnDelete.Enabled;
+            btnCancel.Visible = !btnCancel.Visible;
+            btnClose.Visible = !btnClose.Visible;
             gridDetails.Enabled = !gridDetails.Enabled;
+            lblHint.Visible = !lblHint.Visible;
+            lblTitleDetails.Visible = !lblTitleDetails.Visible;
+            lblTitleEdit.Visible = !lblTitleEdit.Visible;
         }
 
+        /// <summary>
+        /// Unselect details grid first cell when grid is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             gridDetails.ClearSelection();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            SwapEditSaveMode();
+            gridDetails.Columns[2].DefaultCellStyle.BackColor = Color.White;
         }
     }
 }
