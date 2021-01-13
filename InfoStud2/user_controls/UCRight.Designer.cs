@@ -62,7 +62,7 @@ namespace InfoStud2
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(60, 434);
+            this.btnClose.Location = new System.Drawing.Point(228, 435);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace InfoStud2
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(342, 434);
+            this.btnEdit.Location = new System.Drawing.Point(390, 436);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace InfoStud2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(204, 434);
+            this.btnDelete.Location = new System.Drawing.Point(309, 436);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 4;
@@ -175,7 +175,7 @@ namespace InfoStud2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(342, 434);
+            this.btnSave.Location = new System.Drawing.Point(390, 436);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -191,9 +191,9 @@ namespace InfoStud2
             this.lblHint.ForeColor = System.Drawing.Color.Red;
             this.lblHint.Location = new System.Drawing.Point(17, 417);
             this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(213, 13);
+            this.lblHint.Size = new System.Drawing.Size(242, 13);
             this.lblHint.TabIndex = 12;
-            this.lblHint.Text = "On edit mode, you can only edit the grade...";
+            this.lblHint.Text = "On edit mode, you can only edit the yellow fields...";
             this.lblHint.Visible = false;
             // 
             // lblTitleEdit
@@ -210,7 +210,7 @@ namespace InfoStud2
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(60, 434);
+            this.btnCancel.Location = new System.Drawing.Point(228, 435);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 14;

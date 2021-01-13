@@ -45,6 +45,7 @@ namespace InfoStud2
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -77,7 +78,7 @@ namespace InfoStud2
             this.gridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridStudents.Size = new System.Drawing.Size(444, 367);
             this.gridStudents.TabIndex = 0;
-            this.gridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridStudents_CellClick);
+            this.gridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridStudents_CellClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -123,6 +124,7 @@ namespace InfoStud2
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.btnReport);
             this.panelMain.Controls.Add(this.btnNew);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.panelRight);
@@ -142,7 +144,7 @@ namespace InfoStud2
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // pictureBox1
             // 
@@ -180,6 +182,16 @@ namespace InfoStud2
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(300, 522);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.BtnReport_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +226,7 @@ namespace InfoStud2
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.DataGridView gridStudents;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnReport;
     }
 }
 

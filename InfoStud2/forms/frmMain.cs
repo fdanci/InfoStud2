@@ -49,43 +49,20 @@ namespace InfoStud2
         }
 
         /// <summary>
-        /// Atach on the uc panel, the user control with details about a student.
+        /// Unselects selected students and removes any atached user controls on the right panel.
         /// </summary>
-        private void LoadUCRight()
+        private void ClearMainScreen()
         {
+            gridStudents.ClearSelection();
             PanelRight.Controls.Clear();
-            int id = (int)gridStudents.CurrentRow.Cells[0].Value;
-            string name = (string)gridStudents.CurrentRow.Cells[1].Value;
-            string email = (string)gridStudents.CurrentRow.Cells[2].Value;
-            string year = (string)gridStudents.CurrentRow.Cells[3].Value;
-            UCRight ucRight = new UCRight(id, this, name, year, email);
-            ucRight.Name = "UCRight";
-            ucRight.Dock = DockStyle.Fill;
-            PanelRight.Controls.Add(ucRight);
         }
+
 
         /// <summary>
-        /// Atach on the uc panel, the user control with means of adding new student in the system.
+        /// Filter students grid when text has changed inside search textbox.
         /// </summary>
-        private void LoadUCNewStudent()
-        {
-            PanelRight.Controls.Clear();
-            UCNewStudent ucNew = new UCNewStudent(this);
-            ucNew.Name = "UCNew";
-            ucNew.Dock = DockStyle.Fill;
-            PanelRight.Controls.Add(ucNew);
-        }
-
-        private void gridStudents_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LoadUCRight();
-        }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            LoadUCNewStudent();
-        }
-
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             BindingSource bs = new BindingSource();
@@ -116,6 +93,58 @@ namespace InfoStud2
             {
                 gridStudents.ClearSelection();
             }
+        }
+
+
+        /**
+         * User controls.
+         */
+
+        private void GridStudents_CellClick(object sender, DataGridViewCellEventArgs e) { LoadUCRight(); }
+
+        private void BtnNew_Click(object sender, EventArgs e) { LoadUCNewStudent(); }
+
+        private void BtnReport_Click(object sender, EventArgs e) { LoadUCReport(); }
+
+
+        /// <summary>
+        /// Atach on the uc panel, the user control with details about a student.
+        /// </summary>
+        private void LoadUCRight()
+        {
+            PanelRight.Controls.Clear();
+            int id = (int)gridStudents.CurrentRow.Cells[0].Value;
+            string name = (string)gridStudents.CurrentRow.Cells[1].Value;
+            string email = (string)gridStudents.CurrentRow.Cells[2].Value;
+            string year = (string)gridStudents.CurrentRow.Cells[3].Value;
+            UCRight ucRight = new UCRight(id, this, name, year, email);
+            ucRight.Name = "UCRight";
+            ucRight.Dock = DockStyle.Fill;
+            PanelRight.Controls.Add(ucRight);
+        }
+
+        /// <summary>
+        /// Atach on the uc panel the user control with means of adding new student in the system.
+        /// </summary>
+        private void LoadUCNewStudent()
+        {
+            ClearMainScreen();
+            UCNewStudent ucNew = new UCNewStudent(this);
+            ucNew.Name = "UCNew";
+            ucNew.Dock = DockStyle.Fill;
+            PanelRight.Controls.Add(ucNew);
+        }
+
+        /// <summary>
+        /// Atach on the uc panel the report user control.
+        /// </summary>
+        private void LoadUCReport()
+        {
+            ClearMainScreen();
+            UCReport ucReport = new UCReport(this);
+            ucReport.Name = "UCNew";
+            ucReport.Dock = DockStyle.Fill;
+            PanelRight.Controls.Add(ucReport);
         }
     }
 }

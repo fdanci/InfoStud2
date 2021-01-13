@@ -84,36 +84,41 @@ namespace InfoStud2
         /// <param name="e"></param>
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult dialogResult = MessageBox.Show("Are you sure to delete?", "Confirm", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
             {
-                using (SqlConnection conn = new SqlConnection(parent.connectionString))
+                try
                 {
-                    using (SqlCommand cmd = new SqlCommand("DeleteStudent", conn))
+                    using (SqlConnection conn = new SqlConnection(parent.connectionString))
                     {
-                        conn.Open();
-
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@StudentId", studentId);
-
-                        int numRes = cmd.ExecuteNonQuery();
-
-                        if (numRes > 0)
+                        using (SqlCommand cmd = new SqlCommand("DeleteStudent", conn))
                         {
-                            MessageBox.Show("Student deleted!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Something went wrong!");
+                            conn.Open();
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@StudentId", studentId);
+
+                            int numRes = cmd.ExecuteNonQuery();
+
+                            if (numRes > 0)
+                            {
+                                // Do nothing
+                            }
+                            else
+                            {
+                                MessageBox.Show("Something went wrong!");
+                            }
                         }
                     }
-                }
 
-                parent.PanelRight.Controls.RemoveByKey("UCRight");
-                parent.ReloadStudents();
-            }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.Message);
+                    parent.PanelRight.Controls.RemoveByKey("UCRight");
+                    parent.ReloadStudents();
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
             }
         }
 
