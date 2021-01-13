@@ -42,8 +42,6 @@ namespace InfoStud2
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadUCLogin();
-            this.studentTableAdapter.Fill(this.database1DataSet.Student);
-            gridStudents.ClearSelection();
         }
 
         /// <summary>

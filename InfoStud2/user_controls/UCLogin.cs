@@ -24,6 +24,7 @@ namespace InfoStud2
         {
             parent.PanelMain.Controls.RemoveByKey("UCLogin");
             parent.SwapLoginState();
+            parent.ReloadStudents();
         }
 
         private void UCLogin_Load(object sender, EventArgs e)
