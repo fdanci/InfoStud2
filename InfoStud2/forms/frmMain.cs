@@ -25,6 +25,12 @@ namespace InfoStud2
             set { panelRight = value; }
         }
 
+        public Panel PanelMain
+        {
+            get { return panelMain; }
+            set { panelMain = value; }
+        }
+
 
         public frmMain()
         {
@@ -44,6 +50,9 @@ namespace InfoStud2
         /// </summary>
         public void ReloadStudents()
         {
+
+
+
             this.studentTableAdapter.Fill(this.database1DataSet.Student);
             gridStudents.ClearSelection();
         }
@@ -142,9 +151,19 @@ namespace InfoStud2
         {
             ClearMainScreen();
             UCReport ucReport = new UCReport(this);
-            ucReport.Name = "UCNew";
+            ucReport.Name = "UCReport";
             ucReport.Dock = DockStyle.Fill;
             PanelRight.Controls.Add(ucReport);
+        }
+
+
+        private void LoadUCLogin()
+        {
+            ClearMainScreen();
+            UCLogin ucLogin = new UCLogin(this);
+            ucLogin.Name = "UCLogin";
+            ucLogin.Dock = DockStyle.Fill;
+            PanelMain.Controls.Add(ucLogin);
         }
     }
 }
