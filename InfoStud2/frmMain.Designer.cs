@@ -40,10 +40,10 @@ namespace InfoStud2
             this.database1DataSet = new InfoStud2.Database1DataSet();
             this.studentTableAdapter = new InfoStud2.Database1DataSetTableAdapters.StudentTableAdapter();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -125,12 +125,23 @@ namespace InfoStud2
             this.panelMain.Size = new System.Drawing.Size(997, 563);
             this.panelMain.TabIndex = 1;
             // 
-            // textBox1
+            // pictureBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 20);
-            this.textBox1.TabIndex = 1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelRight
+            // 
+            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRight.Location = new System.Drawing.Point(509, 0);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(488, 563);
+            this.panelRight.TabIndex = 3;
             // 
             // lblSearch
             // 
@@ -142,23 +153,12 @@ namespace InfoStud2
             this.lblSearch.TabIndex = 2;
             this.lblSearch.Text = "Search";
             // 
-            // panelRight
+            // textBox1
             // 
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(509, 0);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(488, 563);
-            this.panelRight.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(164, 123);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(292, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // frmMain
             // 
@@ -180,8 +180,6 @@ namespace InfoStud2
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridStudents;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private Database1DataSetTableAdapters.StudentTableAdapter studentTableAdapter;
@@ -194,6 +192,7 @@ namespace InfoStud2
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.DataGridView gridStudents;
     }
 }
 

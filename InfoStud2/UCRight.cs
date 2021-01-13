@@ -24,28 +24,83 @@ namespace InfoStud2
             studentId = id;
         }
 
+        /// <summary>
+        /// Read subjects from database, by given id of the selected student.
+        /// </summary>
         private void LoadSubjects()
         {
-            using (SqlConnection conn = new SqlConnection(parent.connectionString))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("GetStudentSubjects", conn))
+                using (SqlConnection conn = new SqlConnection(parent.connectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@StudentId", studentId);
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    using (SqlCommand cmd = new SqlCommand("GetStudentSubjects", conn))
                     {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        gridDetails.DataSource = dt;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@StudentId", studentId);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            gridDetails.DataSource = dt;
+                        }
                     }
                 }
             }
-
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void UCRight_Load(object sender, EventArgs e)
         {
             LoadSubjects();
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            parent.PanelRight.Controls.RemoveByKey("UCRight");
+            parent.gridStudents.ClearSelection();
+        }
+
+        /// <summary>
+        /// Delete selected student from database and close the details user control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(parent.connectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("DeleteStudent", conn))
+                    {
+                        conn.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@StudentId", studentId);
+
+                        int numRes = cmd.ExecuteNonQuery();
+
+                        if (numRes > 0)
+                        {
+                            MessageBox.Show("Student deleted!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went wrong!");
+                        }
+                    }
+                }
+
+                parent.PanelRight.Controls.RemoveByKey("UCRight");
+                parent.ReloadStudents();
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

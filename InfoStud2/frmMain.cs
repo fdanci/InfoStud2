@@ -39,6 +39,12 @@ namespace InfoStud2
             gridStudents.ClearSelection();
         }
 
+        public void ReloadStudents()
+        {
+            this.studentTableAdapter.Fill(this.database1DataSet.Student);
+            gridStudents.ClearSelection();
+        }
+
         private void LoadUCRight()
         {
             PanelRight.Controls.Clear();

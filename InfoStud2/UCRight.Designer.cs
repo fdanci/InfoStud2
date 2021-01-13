@@ -60,6 +60,7 @@ namespace InfoStud2
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnEdit
             // 
@@ -78,6 +79,7 @@ namespace InfoStud2
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // database1DataSet1
             // 
