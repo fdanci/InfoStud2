@@ -111,5 +111,28 @@ namespace InfoStud2
                 MessageBox.Show(err.Message);
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SwapEditSaveMode();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            SwapEditSaveMode();
+        }
+
+        private void SwapEditSaveMode()
+        {
+            btnEdit.Visible = !btnEdit.Visible;
+            btnSave.Visible = !btnSave.Visible;
+            btnDelete.Enabled = !btnDelete.Enabled;
+            gridDetails.Enabled = !gridDetails.Enabled;
+        }
+
+        private void gridDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            gridDetails.ClearSelection();
+        }
     }
 }

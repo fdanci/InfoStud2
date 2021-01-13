@@ -39,12 +39,18 @@ namespace InfoStud2
             gridStudents.ClearSelection();
         }
 
+        /// <summary>
+        /// Reread students from database and clear initial selection.
+        /// </summary>
         public void ReloadStudents()
         {
             this.studentTableAdapter.Fill(this.database1DataSet.Student);
             gridStudents.ClearSelection();
         }
 
+        /// <summary>
+        /// Atach on the uc panel, the user control with details about a student.
+        /// </summary>
         private void LoadUCRight()
         {
             PanelRight.Controls.Clear();
@@ -58,6 +64,9 @@ namespace InfoStud2
             PanelRight.Controls.Add(ucRight);
         }
 
+        /// <summary>
+        /// Atach on the uc panel, the user control with means of adding new student in the system.
+        /// </summary>
         private void LoadUCNewStudent()
         {
             PanelRight.Controls.Clear();
@@ -81,7 +90,8 @@ namespace InfoStud2
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = gridStudents.DataSource;
-            bs.Filter = gridStudents.Columns[1].HeaderText.ToString() + " LIKE '%" + txtSearch.Text + "%'";
+            bs.Filter = gridStudents.Columns[1].HeaderText.ToString() 
+                + " LIKE '%" + txtSearch.Text + "%'";
             gridStudents.DataSource = bs;
 
             ClearUCPanel();

@@ -40,6 +40,7 @@ namespace InfoStud2
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -74,6 +75,7 @@ namespace InfoStud2
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -98,11 +100,14 @@ namespace InfoStud2
             this.gridDetails.AllowUserToResizeRows = false;
             this.gridDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDetails.Enabled = false;
             this.gridDetails.Location = new System.Drawing.Point(17, 196);
             this.gridDetails.Name = "gridDetails";
             this.gridDetails.RowHeadersVisible = false;
             this.gridDetails.Size = new System.Drawing.Size(448, 207);
             this.gridDetails.TabIndex = 0;
+            this.gridDetails.TabStop = false;
+            this.gridDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gridDetails_DataBindingComplete);
             // 
             // labelGridDetails
             // 
@@ -165,11 +170,23 @@ namespace InfoStud2
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(342, 413);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // UCRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelGridDetails);
             this.Controls.Add(this.btnDelete);
@@ -200,5 +217,6 @@ namespace InfoStud2
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSave;
     }
 }

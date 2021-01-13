@@ -38,14 +38,7 @@ namespace InfoStud2
 
         private void PopulateComboYear()
         {
-            string[] items = {
-                "1",
-                "2",
-                "3",
-                "4"
-            };
-
-  
+            string[] items = {"1", "2", "3", "4"};
             comboYear.DataSource = items;
         }
 
