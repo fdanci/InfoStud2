@@ -16,12 +16,18 @@ namespace InfoStud2
     {
         private readonly frmMain parent;
         private readonly int studentId;
+        private readonly string studentName;
+        private readonly string studentYear;
+        private readonly string studentEmail;
 
-        public UCRight(int id, frmMain frmMain)
+        public UCRight(int id, frmMain frmMain, string name, string year, string email)
         {
             InitializeComponent();
             parent = frmMain;
             studentId = id;
+            studentName = name;
+            studentYear = year;
+            studentEmail = email;
         }
 
         /// <summary>
@@ -54,6 +60,9 @@ namespace InfoStud2
 
         private void UCRight_Load(object sender, EventArgs e)
         {
+            lblName.Text = studentName;
+            lblEmail.Text = studentEmail;
+            lblYear.Text = $"Year: {studentYear}";
             LoadSubjects();
         }
 

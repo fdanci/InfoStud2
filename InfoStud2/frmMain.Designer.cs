@@ -43,7 +43,8 @@ namespace InfoStud2
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -58,6 +59,7 @@ namespace InfoStud2
             this.gridStudents.AllowUserToResizeColumns = false;
             this.gridStudents.AllowUserToResizeRows = false;
             this.gridStudents.AutoGenerateColumns = false;
+            this.gridStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -65,12 +67,15 @@ namespace InfoStud2
             this.emailDataGridViewTextBoxColumn,
             this.yearDataGridViewTextBoxColumn});
             this.gridStudents.DataSource = this.studentBindingSource;
+            this.gridStudents.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridStudents.Location = new System.Drawing.Point(12, 149);
             this.gridStudents.MultiSelect = false;
             this.gridStudents.Name = "gridStudents";
+            this.gridStudents.ReadOnly = true;
+            this.gridStudents.RowHeadersVisible = false;
             this.gridStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridStudents.Size = new System.Drawing.Size(444, 400);
+            this.gridStudents.Size = new System.Drawing.Size(444, 367);
             this.gridStudents.TabIndex = 0;
             this.gridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridStudents_CellClick);
             // 
@@ -86,18 +91,21 @@ namespace InfoStud2
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // yearDataGridViewTextBoxColumn
             // 
             this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
             this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
             this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // studentBindingSource
             // 
@@ -115,10 +123,11 @@ namespace InfoStud2
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.btnNew);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.panelRight);
             this.panelMain.Controls.Add(this.lblSearch);
-            this.panelMain.Controls.Add(this.textBox1);
+            this.panelMain.Controls.Add(this.txtSearch);
             this.panelMain.Controls.Add(this.gridStudents);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -153,12 +162,23 @@ namespace InfoStud2
             this.lblSearch.TabIndex = 2;
             this.lblSearch.Text = "Search";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(164, 123);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(292, 20);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(381, 522);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 5;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmMain
             // 
@@ -190,9 +210,10 @@ namespace InfoStud2
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.DataGridView gridStudents;
+        private System.Windows.Forms.Button btnNew;
     }
 }
 

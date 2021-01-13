@@ -49,15 +49,63 @@ namespace InfoStud2
         {
             PanelRight.Controls.Clear();
             int id = (int)gridStudents.CurrentRow.Cells[0].Value;
-            UCRight ucRight = new UCRight(id, this);
+            string name = (string)gridStudents.CurrentRow.Cells[1].Value;
+            string email = (string)gridStudents.CurrentRow.Cells[2].Value;
+            string year = (string)gridStudents.CurrentRow.Cells[3].Value;
+            UCRight ucRight = new UCRight(id, this, name, year, email);
             ucRight.Name = "UCRight";
             ucRight.Dock = DockStyle.Fill;
             PanelRight.Controls.Add(ucRight);
         }
 
+        private void LoadUCNewStudent()
+        {
+            PanelRight.Controls.Clear();
+            UCNewStudent ucNew = new UCNewStudent(this);
+            ucNew.Name = "UCNew";
+            ucNew.Dock = DockStyle.Fill;
+            PanelRight.Controls.Add(ucNew);
+        }
+
         private void gridStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadUCRight();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            LoadUCNewStudent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = gridStudents.DataSource;
+            bs.Filter = gridStudents.Columns[1].HeaderText.ToString() + " LIKE '%" + txtSearch.Text + "%'";
+            gridStudents.DataSource = bs;
+
+            ClearUCPanel();
+        }
+
+        /// <summary>
+        /// Removes any atached user control on the right panel.
+        /// </summary>
+        private void ClearUCPanel()
+        {
+            if (PanelRight.Controls.ContainsKey("UCRight"))
+            {
+                PanelRight.Controls.RemoveByKey("UCRight");
+                gridStudents.ClearSelection();
+            }
+            else if (PanelRight.Controls.ContainsKey("UCNew"))
+            {
+                PanelRight.Controls.RemoveByKey("UCNew");
+                gridStudents.ClearSelection();
+            } 
+            else
+            {
+                gridStudents.ClearSelection();
+            }
         }
     }
 }

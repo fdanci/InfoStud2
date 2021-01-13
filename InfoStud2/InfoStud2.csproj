@@ -80,6 +80,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCNewStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNewStudent.Designer.cs">
+      <DependentUpon>UCNewStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCRight.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCNewStudent.resx">
+      <DependentUpon>UCNewStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCRight.resx">
       <DependentUpon>UCRight.cs</DependentUpon>
     </EmbeddedResource>

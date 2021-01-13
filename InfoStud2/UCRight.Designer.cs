@@ -36,25 +36,29 @@ namespace InfoStud2
             this.database1DataSet1 = new InfoStud2.Database1DataSet1();
             this.gridDetails = new System.Windows.Forms.DataGridView();
             this.labelGridDetails = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 11);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 25);
+            this.label1.Size = new System.Drawing.Size(489, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student Details";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(60, 518);
+            this.btnClose.Location = new System.Drawing.Point(60, 413);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -64,7 +68,7 @@ namespace InfoStud2
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(342, 518);
+            this.btnEdit.Location = new System.Drawing.Point(342, 413);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -73,7 +77,7 @@ namespace InfoStud2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(204, 518);
+            this.btnDelete.Location = new System.Drawing.Point(204, 413);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 4;
@@ -88,11 +92,16 @@ namespace InfoStud2
             // 
             // gridDetails
             // 
+            this.gridDetails.AllowUserToAddRows = false;
+            this.gridDetails.AllowUserToDeleteRows = false;
+            this.gridDetails.AllowUserToResizeColumns = false;
+            this.gridDetails.AllowUserToResizeRows = false;
             this.gridDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDetails.Location = new System.Drawing.Point(17, 196);
             this.gridDetails.Name = "gridDetails";
-            this.gridDetails.Size = new System.Drawing.Size(448, 316);
+            this.gridDetails.RowHeadersVisible = false;
+            this.gridDetails.Size = new System.Drawing.Size(448, 207);
             this.gridDetails.TabIndex = 0;
             // 
             // labelGridDetails
@@ -105,11 +114,63 @@ namespace InfoStud2
             this.labelGridDetails.TabIndex = 5;
             this.labelGridDetails.Text = "Subjects";
             // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(4, 16);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(250, 27);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Student Name";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(4, 46);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(251, 37);
+            this.lblEmail.TabIndex = 8;
+            this.lblEmail.Text = "Email";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblYear
+            // 
+            this.lblYear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYear.Location = new System.Drawing.Point(6, 79);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(248, 43);
+            this.lblYear.TabIndex = 9;
+            this.lblYear.Text = "Year";
+            this.lblYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Controls.Add(this.lblYear);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Location = new System.Drawing.Point(109, 51);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(259, 128);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Info";
+            // 
             // UCRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelGridDetails);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -121,6 +182,7 @@ namespace InfoStud2
             this.Load += new System.EventHandler(this.UCRight_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +196,9 @@ namespace InfoStud2
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.DataGridView gridDetails;
         private System.Windows.Forms.Label labelGridDetails;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
