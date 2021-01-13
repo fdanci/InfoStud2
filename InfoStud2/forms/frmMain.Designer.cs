@@ -40,11 +40,11 @@ namespace InfoStud2
             this.database1DataSet = new InfoStud2.Database1DataSet();
             this.studentTableAdapter = new InfoStud2.Database1DataSetTableAdapters.StudentTableAdapter();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnNew = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -134,6 +134,16 @@ namespace InfoStud2
             this.panelMain.Size = new System.Drawing.Size(997, 563);
             this.panelMain.TabIndex = 1;
             // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(381, 522);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 5;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -169,16 +179,6 @@ namespace InfoStud2
             this.txtSearch.Size = new System.Drawing.Size(292, 20);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(381, 522);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 5;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmMain
             // 

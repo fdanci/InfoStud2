@@ -125,7 +125,7 @@ namespace InfoStud2
         }
 
         /// <summary>
-        /// Read grades from each row and save them to database.
+        /// Read grades from each row of the grid and update the database.
         /// </summary>
         private void SaveChanges()
         {
@@ -146,7 +146,38 @@ namespace InfoStud2
                     valuesToSave.Add(id, grade);
                 }
             }
-            valuesToSave.ToString();
+            UpdateDatabase(valuesToSave);
+        }
+
+        /// <summary>
+        /// Parse each grade and update it in database.
+        /// </summary>
+        /// <param name="valuesToSave"></param>
+        private void UpdateDatabase(Dictionary<int, string> valuesToSave)
+        {
+            try
+            {
+                foreach (KeyValuePair<int, string> entry in valuesToSave)
+                {
+                    using (SqlConnection conn = new SqlConnection(parent.connectionString))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("UpdateGrade", conn))
+                        {
+                            conn.Open();
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@GradeId", entry.Key);
+                            cmd.Parameters.AddWithValue("@Grade", entry.Value);
+
+                            int numRes = cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
