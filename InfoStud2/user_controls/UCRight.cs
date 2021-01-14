@@ -217,7 +217,8 @@ namespace InfoStud2
         }
 
         /// <summary>
-        /// Unselect details grid first cell when grid is loaded.
+        /// Unselect details grid first cell when grid is loaded. 
+        /// This fixed annoying first cell getting selected after each grid load.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -272,7 +273,7 @@ namespace InfoStud2
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            parent.DisplayAllYearsPanel(studentId);
+            parent.DisplayAllYearsPanel(studentId, studentName, studentYear, studentEmail);
         }
     }
 }

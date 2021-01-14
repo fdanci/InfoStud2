@@ -190,17 +190,26 @@ namespace InfoStud2
             btnLogout.Visible = !btnLogout.Visible;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
             SwapLeftRightVisibility();
             LoadUCLogin();
         }
 
-        public void DisplayAllYearsPanel(int studentId)
+        public void DisplayAllYearsPanel(int studentId, 
+            string studentName, string studentYear, string studentEmail)
         {
+            string name = (string)gridStudents.CurrentRow.Cells[1].Value;
+            string email = (string)gridStudents.CurrentRow.Cells[2].Value;
+            string year = (string)gridStudents.CurrentRow.Cells[3].Value;
+
             ClearMainScreen();
             SwapLeftRightVisibility();
-            UCAllYearsPanel ucAllYearsPanel = new UCAllYearsPanel(this, studentId, gridStudents.CurrentCell.RowIndex);
+
+            // Create instance of the years user control.
+            UCAllYearsPanel ucAllYearsPanel = new UCAllYearsPanel(
+                this, studentId, gridStudents.CurrentCell.RowIndex, name, email, year);
+
             ucAllYearsPanel.Name = "UCAllYears";
             ucAllYearsPanel.Dock = DockStyle.Fill;
             PanelMain.Controls.Add(ucAllYearsPanel);

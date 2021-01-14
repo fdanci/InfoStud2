@@ -18,13 +18,20 @@ namespace InfoStud2
         private frmMain parent;
         private int studentId;
         private int rowIndex;
+        private string studentName;
+        private string studentEmail;
+        private string year;
 
-        public UCAllYearsPanel(frmMain frmMain, int studentId, int rowIndex)
+        public UCAllYearsPanel(frmMain frmMain, int studentId, 
+            int rowIndex, string name, string email, string year)
         {
             InitializeComponent();
             parent = frmMain;
             this.studentId = studentId;
             this.rowIndex = rowIndex;
+            studentName = name;
+            studentEmail = email;
+            this.year = year;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -37,7 +44,23 @@ namespace InfoStud2
 
         private void UCAllYearsPanel_Load(object sender, EventArgs e)
         {
-            // Todo load one by one all UC Controls
+            lblName.Text = studentName;
+            lblEmail.Text = studentEmail;
+
+            LoadUCYear(panelY1, "1");
+            LoadUCYear(panelY2, "2");
+            LoadUCYear(panelY3, "3");
+            LoadUCYear(panelY4, "4");
+        }
+
+        public void LoadUCYear(Panel panel, string year)
+        {
+            panel.Controls.Clear();
+
+            UCYear ucRight = new UCYear(parent, year, studentId);
+            ucRight.Name = "UCYear" + year;
+            ucRight.Dock = DockStyle.Fill;
+            panel.Controls.Add(ucRight);
         }
     }
 }

@@ -45,9 +45,9 @@ namespace InfoStud2
             this.lblTitleEdit = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnAll = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,9 +133,9 @@ namespace InfoStud2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(4, 16);
+            this.lblName.Location = new System.Drawing.Point(4, 25);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(250, 27);
+            this.lblName.Size = new System.Drawing.Size(250, 15);
             this.lblName.TabIndex = 7;
             this.lblName.Text = "Student Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,9 +146,9 @@ namespace InfoStud2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(4, 46);
+            this.lblEmail.Location = new System.Drawing.Point(4, 51);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(251, 37);
+            this.lblEmail.Size = new System.Drawing.Size(251, 14);
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "Email";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,9 +159,9 @@ namespace InfoStud2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(6, 79);
+            this.lblYear.Location = new System.Drawing.Point(6, 81);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(248, 43);
+            this.lblYear.Size = new System.Drawing.Size(248, 18);
             this.lblYear.TabIndex = 9;
             this.lblYear.Text = "Year";
             this.lblYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +173,7 @@ namespace InfoStud2
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Location = new System.Drawing.Point(109, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 128);
+            this.groupBox1.Size = new System.Drawing.Size(259, 110);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
@@ -236,6 +236,17 @@ namespace InfoStud2
             this.panelButtons.Size = new System.Drawing.Size(487, 36);
             this.panelButtons.TabIndex = 15;
             // 
+            // btnAll
+            // 
+            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAll.Location = new System.Drawing.Point(211, 5);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(75, 23);
+            this.btnAll.TabIndex = 17;
+            this.btnAll.Text = "All Years";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(405, 5);
@@ -255,17 +266,6 @@ namespace InfoStud2
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnAll
-            // 
-            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAll.Location = new System.Drawing.Point(211, 5);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(75, 23);
-            this.btnAll.TabIndex = 17;
-            this.btnAll.Text = "All Years";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // UCRight
             // 
