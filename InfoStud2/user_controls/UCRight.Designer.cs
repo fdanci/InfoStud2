@@ -67,7 +67,7 @@ namespace InfoStud2
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(228, 444);
+            this.btnClose.Location = new System.Drawing.Point(228, 371);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace InfoStud2
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(390, 445);
+            this.btnEdit.Location = new System.Drawing.Point(390, 372);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace InfoStud2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(309, 445);
+            this.btnDelete.Location = new System.Drawing.Point(309, 372);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 4;
@@ -112,7 +112,7 @@ namespace InfoStud2
             this.gridDetails.Location = new System.Drawing.Point(17, 218);
             this.gridDetails.Name = "gridDetails";
             this.gridDetails.RowHeadersVisible = false;
-            this.gridDetails.Size = new System.Drawing.Size(448, 207);
+            this.gridDetails.Size = new System.Drawing.Size(448, 133);
             this.gridDetails.TabIndex = 0;
             this.gridDetails.TabStop = false;
             this.gridDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gridDetails_DataBindingComplete);
@@ -180,7 +180,7 @@ namespace InfoStud2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(390, 445);
+            this.btnSave.Location = new System.Drawing.Point(390, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -194,7 +194,7 @@ namespace InfoStud2
             this.lblHint.AutoSize = true;
             this.lblHint.BackColor = System.Drawing.SystemColors.Control;
             this.lblHint.ForeColor = System.Drawing.Color.Red;
-            this.lblHint.Location = new System.Drawing.Point(17, 426);
+            this.lblHint.Location = new System.Drawing.Point(17, 353);
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new System.Drawing.Size(242, 13);
             this.lblHint.TabIndex = 12;
@@ -215,7 +215,7 @@ namespace InfoStud2
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(228, 444);
+            this.btnCancel.Location = new System.Drawing.Point(228, 371);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 14;

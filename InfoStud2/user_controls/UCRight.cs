@@ -162,7 +162,7 @@ namespace InfoStud2
         }
 
         /// <summary>
-        /// Parse each grade and update it in database.
+        /// Parse each grade and update it in database. The values to save come as (grade id - grade).
         /// </summary>
         /// <param name="valuesToSave"></param>
         private void UpdateDatabase(Dictionary<int, string> valuesToSave)
@@ -181,7 +181,7 @@ namespace InfoStud2
                             cmd.Parameters.AddWithValue("@GradeId", entry.Key);
                             cmd.Parameters.AddWithValue("@Grade", entry.Value);
 
-                            int numRes = cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
                         }
                     }
                 }

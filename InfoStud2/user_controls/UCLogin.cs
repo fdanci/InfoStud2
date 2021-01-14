@@ -26,10 +26,5 @@ namespace InfoStud2
             parent.SwapLeftRightVisibility();
             parent.ReloadStudents();
         }
-
-        private void UCLogin_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

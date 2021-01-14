@@ -68,7 +68,6 @@ namespace InfoStud2
             this.Controls.Add(this.pictureBox1);
             this.Name = "UCLogin";
             this.Size = new System.Drawing.Size(1013, 560);
-            this.Load += new System.EventHandler(this.UCLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

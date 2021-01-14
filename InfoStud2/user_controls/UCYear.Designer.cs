@@ -77,8 +77,7 @@ namespace InfoStud2
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridYear;
         private System.Windows.Forms.Label lblYear;
+        public System.Windows.Forms.DataGridView gridYear;
     }
 }
