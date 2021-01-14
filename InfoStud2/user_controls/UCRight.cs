@@ -272,7 +272,7 @@ namespace InfoStud2
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-
+            parent.DisplayAllYearsPanel(studentId);
         }
     }
 }

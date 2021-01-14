@@ -115,7 +115,7 @@ namespace InfoStud2
         /// <summary>
         /// Atach on the uc panel, the user control with details about a student.
         /// </summary>
-        private void LoadUCRight()
+        public void LoadUCRight()
         {
             PanelRight.Controls.Clear();
             int id = (int)gridStudents.CurrentRow.Cells[0].Value;
@@ -194,6 +194,16 @@ namespace InfoStud2
         {
             SwapLeftRightVisibility();
             LoadUCLogin();
+        }
+
+        public void DisplayAllYearsPanel(int studentId)
+        {
+            ClearMainScreen();
+            SwapLeftRightVisibility();
+            UCAllYearsPanel ucAllYearsPanel = new UCAllYearsPanel(this, studentId, gridStudents.CurrentCell.RowIndex);
+            ucAllYearsPanel.Name = "UCAllYears";
+            ucAllYearsPanel.Dock = DockStyle.Fill;
+            PanelMain.Controls.Add(ucAllYearsPanel);
         }
     }
 }
