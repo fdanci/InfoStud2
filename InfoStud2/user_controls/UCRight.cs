@@ -212,6 +212,8 @@ namespace InfoStud2
             lblHint.Visible = !lblHint.Visible;
             lblTitleDetails.Visible = !lblTitleDetails.Visible;
             lblTitleEdit.Visible = !lblTitleEdit.Visible;
+            btnPrevious.Visible = !btnPrevious.Visible;
+            btnNext.Visible = !btnNext.Visible;
         }
 
         /// <summary>
@@ -266,6 +268,11 @@ namespace InfoStud2
                 btnNext.Enabled = true;
                 btnPrevious.Enabled = true;
             }
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

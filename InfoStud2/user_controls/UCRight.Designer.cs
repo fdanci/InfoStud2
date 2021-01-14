@@ -45,8 +45,9 @@ namespace InfoStud2
             this.lblTitleEdit = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -226,6 +227,7 @@ namespace InfoStud2
             // panelButtons
             // 
             this.panelButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelButtons.Controls.Add(this.btnAll);
             this.panelButtons.Controls.Add(this.btnNext);
             this.panelButtons.Controls.Add(this.btnPrevious);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -233,6 +235,16 @@ namespace InfoStud2
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(487, 36);
             this.panelButtons.TabIndex = 15;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(405, 5);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 16;
+            this.btnNext.Text = "Next Year";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -244,15 +256,16 @@ namespace InfoStud2
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // btnNext
+            // btnAll
             // 
-            this.btnNext.Location = new System.Drawing.Point(405, 5);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 16;
-            this.btnNext.Text = "Next Year";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAll.Location = new System.Drawing.Point(211, 5);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(75, 23);
+            this.btnAll.TabIndex = 17;
+            this.btnAll.Text = "All Years";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // UCRight
             // 
@@ -303,5 +316,6 @@ namespace InfoStud2
         private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnAll;
     }
 }

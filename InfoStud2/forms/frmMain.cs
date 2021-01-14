@@ -174,7 +174,11 @@ namespace InfoStud2
             PanelMain.Controls.Add(ucLogin);
         }
 
-        public void SwapLoginState()
+        /// <summary>
+        /// Hides/shows lefts side and right side content. 
+        /// I use it to hide everything as long as login screen should be visible.
+        /// </summary>
+        public void SwapLeftRightVisibility()
         {
             PanelRight.Visible = !PanelRight.Visible;
             pictureBox1.Visible = !pictureBox1.Visible;
@@ -188,7 +192,7 @@ namespace InfoStud2
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            SwapLoginState();
+            SwapLeftRightVisibility();
             LoadUCLogin();
         }
     }
