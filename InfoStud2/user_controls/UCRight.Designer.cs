@@ -44,9 +44,13 @@ namespace InfoStud2
             this.lblHint = new System.Windows.Forms.Label();
             this.lblTitleEdit = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitleDetails
@@ -55,14 +59,14 @@ namespace InfoStud2
             this.lblTitleDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleDetails.Location = new System.Drawing.Point(0, 0);
             this.lblTitleDetails.Name = "lblTitleDetails";
-            this.lblTitleDetails.Size = new System.Drawing.Size(489, 25);
+            this.lblTitleDetails.Size = new System.Drawing.Size(487, 25);
             this.lblTitleDetails.TabIndex = 1;
             this.lblTitleDetails.Text = "Student Details";
             this.lblTitleDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(228, 521);
+            this.btnClose.Location = new System.Drawing.Point(228, 444);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -72,7 +76,7 @@ namespace InfoStud2
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(390, 522);
+            this.btnEdit.Location = new System.Drawing.Point(390, 445);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -82,7 +86,7 @@ namespace InfoStud2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(309, 522);
+            this.btnDelete.Location = new System.Drawing.Point(309, 445);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 4;
@@ -104,7 +108,7 @@ namespace InfoStud2
             this.gridDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDetails.Enabled = false;
-            this.gridDetails.Location = new System.Drawing.Point(17, 295);
+            this.gridDetails.Location = new System.Drawing.Point(17, 218);
             this.gridDetails.Name = "gridDetails";
             this.gridDetails.RowHeadersVisible = false;
             this.gridDetails.Size = new System.Drawing.Size(448, 207);
@@ -116,7 +120,7 @@ namespace InfoStud2
             // 
             this.labelGridDetails.AutoSize = true;
             this.labelGridDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGridDetails.Location = new System.Drawing.Point(394, 272);
+            this.labelGridDetails.Location = new System.Drawing.Point(394, 195);
             this.labelGridDetails.Name = "labelGridDetails";
             this.labelGridDetails.Size = new System.Drawing.Size(71, 20);
             this.labelGridDetails.TabIndex = 5;
@@ -166,7 +170,7 @@ namespace InfoStud2
             this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.lblYear);
             this.groupBox1.Controls.Add(this.lblName);
-            this.groupBox1.Location = new System.Drawing.Point(109, 93);
+            this.groupBox1.Location = new System.Drawing.Point(109, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 128);
             this.groupBox1.TabIndex = 10;
@@ -175,7 +179,7 @@ namespace InfoStud2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(390, 522);
+            this.btnSave.Location = new System.Drawing.Point(390, 445);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -189,7 +193,7 @@ namespace InfoStud2
             this.lblHint.AutoSize = true;
             this.lblHint.BackColor = System.Drawing.SystemColors.Control;
             this.lblHint.ForeColor = System.Drawing.Color.Red;
-            this.lblHint.Location = new System.Drawing.Point(17, 503);
+            this.lblHint.Location = new System.Drawing.Point(17, 426);
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new System.Drawing.Size(242, 13);
             this.lblHint.TabIndex = 12;
@@ -202,7 +206,7 @@ namespace InfoStud2
             this.lblTitleEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleEdit.Location = new System.Drawing.Point(0, 25);
             this.lblTitleEdit.Name = "lblTitleEdit";
-            this.lblTitleEdit.Size = new System.Drawing.Size(489, 25);
+            this.lblTitleEdit.Size = new System.Drawing.Size(487, 25);
             this.lblTitleEdit.TabIndex = 13;
             this.lblTitleEdit.Text = "Edit Student Mode";
             this.lblTitleEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -210,7 +214,7 @@ namespace InfoStud2
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(228, 521);
+            this.btnCancel.Location = new System.Drawing.Point(228, 444);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 14;
@@ -219,11 +223,44 @@ namespace InfoStud2
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // panelButtons
+            // 
+            this.panelButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelButtons.Controls.Add(this.btnNext);
+            this.panelButtons.Controls.Add(this.btnPrevious);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButtons.Location = new System.Drawing.Point(0, 509);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(487, 36);
+            this.panelButtons.TabIndex = 15;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(4, 5);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.TabIndex = 15;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(405, 5);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 16;
+            this.btnNext.Text = "Next Year";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // UCRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblTitleEdit);
             this.Controls.Add(this.lblHint);
@@ -236,11 +273,12 @@ namespace InfoStud2
             this.Controls.Add(this.lblTitleDetails);
             this.Controls.Add(this.gridDetails);
             this.Name = "UCRight";
-            this.Size = new System.Drawing.Size(489, 547);
+            this.Size = new System.Drawing.Size(487, 545);
             this.Load += new System.EventHandler(this.UCRight_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetails)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +300,8 @@ namespace InfoStud2
         private System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.Label lblTitleEdit;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel panelButtons;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
     }
 }

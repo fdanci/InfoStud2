@@ -134,7 +134,7 @@ namespace InfoStud2
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(489, 25);
+            this.label1.Size = new System.Drawing.Size(487, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "New Student";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -148,9 +148,9 @@ namespace InfoStud2
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 347);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 345);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(489, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(487, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -188,6 +188,7 @@ namespace InfoStud2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -195,7 +196,7 @@ namespace InfoStud2
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "UCNewStudent";
-            this.Size = new System.Drawing.Size(489, 547);
+            this.Size = new System.Drawing.Size(487, 545);
             this.Load += new System.EventHandler(this.UCNewStudent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

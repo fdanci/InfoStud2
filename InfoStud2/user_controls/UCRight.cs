@@ -30,6 +30,11 @@ namespace InfoStud2
             studentEmail = email;
         }
 
+        public int GetYear()
+        {
+            return Int32.Parse(studentYear);
+        }
+
         /// <summary>
         /// Read subjects from database by given id of the selected student, fill subjects grid.
         /// </summary>
@@ -43,7 +48,7 @@ namespace InfoStud2
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@StudentId", studentId);
-                        cmd.Parameters.AddWithValue("@Year", studentYear);
+                        cmd.Parameters.AddWithValue("@Year", GetYear().ToString());
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
@@ -70,6 +75,7 @@ namespace InfoStud2
             lblYear.Text = $"Year: {studentYear}";
 
             LoadSubjects();
+            UpdateYearButtonsState();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -222,6 +228,44 @@ namespace InfoStud2
         {
             SwapEditSaveMode();
             gridDetails.Columns[2].DefaultCellStyle.BackColor = Color.White;
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+
+            int year = GetYear();
+            if(year > 1)
+            {
+                parent.LoadUCRight(--year);
+                UpdateYearButtonsState();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int year = GetYear();
+            if (year < 4)
+            {
+                parent.LoadUCRight(++year);
+                UpdateYearButtonsState();
+            }
+        }
+
+        private void UpdateYearButtonsState()
+        {
+            if(GetYear() == 1)
+            {
+                btnPrevious.Enabled = false;
+            }
+            if(GetYear() == 4)
+            {
+                btnNext.Enabled = false;
+            }
+            if(GetYear() > 1 && GetYear() < 4)
+            {
+                btnNext.Enabled = true;
+                btnPrevious.Enabled = true;
+            }
         }
     }
 }

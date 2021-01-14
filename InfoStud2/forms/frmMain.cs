@@ -128,6 +128,18 @@ namespace InfoStud2
             PanelRight.Controls.Add(ucRight);
         }
 
+        public void LoadUCRight(int year)
+        {
+            PanelRight.Controls.Clear();
+            int id = (int)gridStudents.CurrentRow.Cells[0].Value;
+            string name = (string)gridStudents.CurrentRow.Cells[1].Value;
+            string email = (string)gridStudents.CurrentRow.Cells[2].Value;
+            UCRight ucRight = new UCRight(id, this, name, year.ToString(), email);
+            ucRight.Name = "UCRight";
+            ucRight.Dock = DockStyle.Fill;
+            PanelRight.Controls.Add(ucRight);
+        }
+
         /// <summary>
         /// Atach on the uc panel the user control with means of adding new student in the system.
         /// </summary>

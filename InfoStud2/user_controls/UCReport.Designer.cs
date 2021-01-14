@@ -40,7 +40,7 @@ namespace InfoStud2
             this.lblReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReport.Location = new System.Drawing.Point(0, 0);
             this.lblReport.Name = "lblReport";
-            this.lblReport.Size = new System.Drawing.Size(489, 25);
+            this.lblReport.Size = new System.Drawing.Size(487, 25);
             this.lblReport.TabIndex = 13;
             this.lblReport.Text = "Report";
             this.lblReport.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,11 +69,12 @@ namespace InfoStud2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblReport);
             this.Name = "UCReport";
-            this.Size = new System.Drawing.Size(489, 547);
+            this.Size = new System.Drawing.Size(487, 545);
             this.ResumeLayout(false);
 
         }
