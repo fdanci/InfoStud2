@@ -90,16 +90,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCAllYearsPanel.cs">
+    <Compile Include="user_controls\UCAllYearsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCAllYearsPanel.Designer.cs">
+    <Compile Include="user_controls\UCAllYearsPanel.Designer.cs">
       <DependentUpon>UCAllYearsPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCYear.cs">
+    <Compile Include="user_controls\UCYear.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCYear.Designer.cs">
+    <Compile Include="user_controls\UCYear.Designer.cs">
       <DependentUpon>UCYear.cs</DependentUpon>
     </Compile>
     <Compile Include="user_controls\UCLogin.cs">
@@ -138,10 +138,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCAllYearsPanel.resx">
+    <EmbeddedResource Include="user_controls\UCAllYearsPanel.resx">
       <DependentUpon>UCAllYearsPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCYear.resx">
+    <EmbeddedResource Include="user_controls\UCYear.resx">
       <DependentUpon>UCYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\UCLogin.resx">

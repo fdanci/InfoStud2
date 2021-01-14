@@ -64,10 +64,11 @@ namespace InfoStud2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.gridYear);
             this.Name = "UCYear";
-            this.Size = new System.Drawing.Size(485, 177);
+            this.Size = new System.Drawing.Size(483, 175);
             this.Load += new System.EventHandler(this.UCYear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridYear)).EndInit();
             this.ResumeLayout(false);

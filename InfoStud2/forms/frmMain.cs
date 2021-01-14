@@ -49,6 +49,7 @@ namespace InfoStud2
         /// </summary>
         public void ReloadStudents()
         {
+            txtSearch.Clear();
             this.studentTableAdapter.Fill(this.database1DataSet.Student);
             gridStudents.ClearSelection();
         }
