@@ -96,6 +96,12 @@
     <Compile Include="UCAllYearsPanel.Designer.cs">
       <DependentUpon>UCAllYearsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCYear.Designer.cs">
+      <DependentUpon>UCYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\UCLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="UCAllYearsPanel.resx">
       <DependentUpon>UCAllYearsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCYear.resx">
+      <DependentUpon>UCYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>

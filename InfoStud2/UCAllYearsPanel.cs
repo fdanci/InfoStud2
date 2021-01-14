@@ -34,5 +34,10 @@ namespace InfoStud2
             parent.gridStudents.Rows[rowIndex].Selected = true;
             parent.LoadUCRight();
         }
+
+        private void UCAllYearsPanel_Load(object sender, EventArgs e)
+        {
+            // Todo load one by one all UC Controls
+        }
     }
 }
