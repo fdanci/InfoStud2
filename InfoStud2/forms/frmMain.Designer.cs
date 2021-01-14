@@ -40,13 +40,13 @@ namespace InfoStud2
             this.database1DataSet = new InfoStud2.Database1DataSet();
             this.studentTableAdapter = new InfoStud2.Database1DataSetTableAdapters.StudentTableAdapter();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -139,6 +139,17 @@ namespace InfoStud2
             this.panelMain.Size = new System.Drawing.Size(997, 560);
             this.panelMain.TabIndex = 1;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(12, 522);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Visible = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // btnReport
             // 
             this.btnReport.Location = new System.Drawing.Point(300, 522);
@@ -201,23 +212,13 @@ namespace InfoStud2
             this.txtSearch.Visible = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(12, 522);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Visible = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 561);
             this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.Text = "InfoStud";
             this.Load += new System.EventHandler(this.Form1_Load);
