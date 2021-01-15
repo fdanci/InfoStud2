@@ -35,6 +35,11 @@ namespace InfoStud2
             return Int32.Parse(studentYear);
         }
 
+        public void ReloadSubjects()
+        {
+            LoadSubjects();
+        }
+
         /// <summary>
         /// Read subjects from database by given id of the selected student, fill subjects grid.
         /// </summary>
@@ -229,6 +234,7 @@ namespace InfoStud2
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            ReloadSubjects();
             SwapEditSaveMode();
             gridDetails.Columns[2].DefaultCellStyle.BackColor = Color.White;
         }
